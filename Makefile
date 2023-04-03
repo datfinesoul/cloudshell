@@ -4,7 +4,8 @@ SHELL := /usr/bin/env bash -euo pipefail -c
 .NOTPARALLEL:
 
 all: ${HOME}/.local/bin/starship \
-	dotloader
+	dotloader \
+	overlay
 
 ${HOME}/.local/bin/starship:
 	mkdir -p "${HOME}/.local/bin"
@@ -12,10 +13,12 @@ ${HOME}/.local/bin/starship:
 	chmod 700 /tmp/install.sh
 	/tmp/install.sh -b "${HOME}/.local/bin"
 
-
 dotloader:
 	./dotloader.bash bashrc
 	./dotloader.bash bash_profile
 
+overlay:
+	cp -a overlay/. "${HOME}"
 
-.PHONY: dotloader
+
+.PHONY: dotloader overlay
