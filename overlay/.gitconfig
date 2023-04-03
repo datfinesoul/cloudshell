@@ -1,0 +1,44 @@
+[init]
+    defaultBranch = main
+[push]
+    default = simple
+[pull]
+    rebase = false
+[core]
+    autocrlf = input
+    whitespace = -trailing-space
+    ignorecase = true
+    pager = less -FXRS -x2
+[diff]
+    renames = copies
+    renameLimit = 5000
+[merge]
+    renameLimit = 5000
+[alias]
+    s = status -uall -s -b
+    lg = log --graph --date-order --pretty=format:'%Cred%h%Creset - %C(white)%s\n%C(red ul)          %Cgreen(%cr) %C(cyan)[%an,%cn]%Creset %C(yellow)%d%Creset'
+[color]
+    status = auto
+    branch = auto
+[branch]
+    autoSetupMerge = false
+[color "status"]
+    added = green
+    changed = cyan
+    untracked = red
+[color "diff"]
+    meta = blue
+    frag = magenta
+    old = red
+    new = green
+[filter "lfs"]
+    clean = git-lfs clean %f
+    smudge = git-lfs smudge %f
+    required = true
+[user]
+    name = Philip Hadviger
+    email = 613305+datfinesoul@users.noreply.github.com
+[fetch]
+    prune = true
+[status]
+    relativePaths = false
