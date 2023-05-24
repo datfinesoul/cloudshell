@@ -51,3 +51,13 @@ symbol = '⎇ '
 
 [container]
 disabled = true
+
+[nodejs]
+symbol = 'js:'
+version_format = '${raw}'
+
+[terraform]
+format = 'TF($style) '
+
+[directory]
+format = "[$path]($style)[$read_only]($read_only_style)\n"
