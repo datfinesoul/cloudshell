@@ -5,7 +5,7 @@ add_newline = true
 
 [aws]
 force_display = true
-style = 'bold blue'
+style = 'dimmed white'
 symbol = '🅰 '
 
 [aws.region_aliases]
@@ -44,7 +44,7 @@ disabled = true
 disabled = false
 format = '[$time]($style) '
 time_format = '%H:%M:%S%z'
-style = 'bold white'
+style = 'bright-white'
 
 [git_branch]
 symbol = '⎇ '
@@ -57,7 +57,17 @@ symbol = 'js:'
 version_format = '${raw}'
 
 [terraform]
-format = 'TF($style) '
+format = '[$symbol]($style) '
+symbol = 'TF'
+style = 'bright-blue'
+
+#[custom.tf]
+#command = 'readlink $(which terraform) | awk -F "_" "NF > 1 {print $NF}"'
+#detect_extensions = ['tf', 'tfplan', 'tfstate']
 
 [directory]
 format = "[$path]($style)[$read_only]($read_only_style)\n"
+truncate_to_repo = false
+style= 'yellow'
+truncation_length = 8
+truncation_symbol = '.../'
