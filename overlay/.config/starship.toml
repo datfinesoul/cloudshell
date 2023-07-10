@@ -57,7 +57,7 @@ symbol = 'js:'
 version_format = '${raw}'
 
 [terraform]
-format = '[$symbol]($style) '
+format = '[$symbol$version]($style) '
 symbol = 'TF'
 style = 'bright-blue'
 
